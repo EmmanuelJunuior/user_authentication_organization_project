@@ -44,10 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'api',
     'user_auth_app',
     'rest_framework',
     'rest_framework_simplejwt',
-    'api',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -86,12 +87,12 @@ WSGI_APPLICATION = 'user_auth_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'user_Auth_data',
-        'USER': 'postgres',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'EmmanuelManuelJu$user_auth_data',
+        'USER': 'EmmanuelManuelJu',
         'PASSWORD': 'Emmanuel88',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'HOST': 'EmmanuelManuelJunior.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
     }
 }
 
@@ -156,4 +157,5 @@ SIMPLE_JWT = {
     'USER_ID_CLAIM': 'user_id',
     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
     'TOKEN_TYPE_CLAIM': 'token_type',
+    'TOKEN_OBTAIN_SERIALIZER':'api.serializers.CustomTokenObtainPairSerializer',
 }

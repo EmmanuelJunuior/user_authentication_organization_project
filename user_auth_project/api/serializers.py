@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from user_auth_app.models import User, Organisation
+from auth_app.models import User, Organisation
 from django.contrib.auth import authenticate
 from django.contrib.auth.password_validation import validate_password
 from rest_framework_simplejwt.tokens import RefreshToken
